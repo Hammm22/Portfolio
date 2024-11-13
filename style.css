@@ -97,9 +97,6 @@ body {
   .isiWebsite a {
     font-size: 5vw;
   }
-  .sosmed{
-    flex-direction: column;
-  }
 }
 
 @media (max-width: 670px) {
@@ -160,10 +157,8 @@ body {
   .isiWebsite a {
     font-size: 4vw;
   }
-  .sosmed{
-    flex-direction: column;
-  }
 }
+
 .Ilham {
   animation: breathe 5s ease-in-out infinite;
   color: blue;
@@ -594,12 +589,12 @@ footer {
 .sosmed {
   height: 100%;
   width: 100%;
-  margin-top: 7cm;
+  margin-top: 5cm;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5cm;
+  gap: 3cm;
 }
 
 .IG:hover {
