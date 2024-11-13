@@ -97,6 +97,9 @@ body {
   .isiWebsite a {
     font-size: 5vw;
   }
+  .sosmed{
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 670px) {
@@ -156,6 +159,9 @@ body {
 
   .isiWebsite a {
     font-size: 4vw;
+  }
+  .sosmed{
+    flex-direction: column;
   }
 }
 .Ilham {
