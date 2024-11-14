@@ -97,6 +97,9 @@ body {
   .isiWebsite a {
     font-size: 5vw;
   }
+  .emailAddress{
+    font-size: 5px;
+  }
 }
 
 @media (max-width: 670px) {
@@ -156,6 +159,9 @@ body {
 
   .isiWebsite a {
     font-size: 4vw;
+  }
+  .emailAddress{
+    font-size: 2px;
   }
 }
 
