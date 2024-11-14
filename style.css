@@ -9,7 +9,7 @@ body {
 }
 
 .home {
-  height: 85vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,7 +44,7 @@ body {
   }
   .home {
     margin-top: 4cm;
-    height: 85vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -160,7 +160,7 @@ body {
 }
 
 .Ilham {
-  animation: breathe 5s ease-in-out infinite;
+  animation: breathe 2.5s ease-in-out infinite;
   color: blue;
   font-size: 40px;
   font-weight: bolder;
@@ -203,6 +203,7 @@ body {
 }
 
 .myProj {
+  width: 100%;
   animation: projectBlinking 1.5s steps(2, start) infinite;
   margin-top: 6cm;
   font-size: 70px;
@@ -309,7 +310,7 @@ footer {
   animation: projectBlinking 1.5s steps(2, start) infinite;
   margin-top: 2cm;
   color: white;
-  font-size: 24;
+  font-size: 27px;
   font-weight: 800;
   text-align: center;
 }
@@ -476,7 +477,8 @@ footer {
 
 .proj1CPP,
 .proj2CPP,
-.proj3CPP {
+.proj3CPP,
+.proj4CPP {
   align-items: center;
   justify-content: center;
   width: 280px;
@@ -490,13 +492,15 @@ footer {
 
 .proj1CPP:hover,
 .proj2CPP:hover,
-.proj3CPP:hover {
+.proj3CPP:hover,
+.proj4CPP:hover  {
   transform: scale(1.05);
 }
 
 .proj1CPP img,
 .proj2CPP img,
-.proj3CPP img {
+.proj3CPP img,
+.proj4CPP img {
   width: 80%;
   height: auto;
 }
@@ -586,7 +590,7 @@ footer {
   }
 }
 
-.sosmed {
+.sosmed { 
   height: 100%;
   width: 100%;
   margin-top: 5cm;
@@ -609,27 +613,55 @@ footer {
   background-color: #696969;
   border-radius: 20px;
 }
-
-.Email {
-  margin-top: 2cm;
-  justify-content: center;
-  align-items: center;
+.Gmail:hover {
+  background-color: #696969;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 .isiEmail {
-  display: flex;
+  display: none;
+  background-color: #696969;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.75);
+  justify-content: center;
+  align-items: center;
+  gap: 0.5cm;
   flex-direction: column;
   font-size: 20px;
   font-weight: 700;
   text-decoration: none;
   color: white;
 }
-.isiEmail:hover {
+
+.emailAddress{
+  display: flex;
+  flex-direction: column;
+gap: 0.2cm;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.isiEmail svg{
+  justify-content: left;
+  align-items: start;
+}
+
+.isiEmail a:hover {
   color: blue;
 }
 
 .closing {
+  margin-top: 2cm;
+  margin-left: 0.2cm;
+  align-items: center;
+  justify-content: center;
   font-weight: 700;
   font-size: 22px;
   color: white;
+}
+
+.RS, .CPP, .Web {
+  animation: projectBlinking 1.2s steps(2, start) infinite;
 }
