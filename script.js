@@ -22,4 +22,13 @@ function hideWebContent() {
     const WebContent = document.querySelector('.isiWebsite');
     WebContent.style.display = 'none';
 }
+function showEmailContent() {
+    const EmailContent = document.querySelector('.isiEmail');
+    EmailContent.style.display = 'flex';
+}
+function hideEmailContent() {
+    const EmailContent = document.querySelector('.isiEmail');
+    EmailContent.style.display = 'none';
+}
+
 
