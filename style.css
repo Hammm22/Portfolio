@@ -1,0 +1,667 @@
+body {
+  font-family: "Doto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(69, 69, 69);
+  background-size: 103%;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+}
+
+.home {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: white;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 100%;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 30%;
+    transform: scale(1.2);
+  }
+}
+@keyframes breathecard {
+  0%,
+  100% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 30%;
+  }
+}
+
+@media (max-width: 750px) {
+  nav {
+    position: relative;
+  }
+  .home {
+    margin-top: 4cm;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+  }
+
+  .ilham {
+    font-size: 25px;
+  }
+  .text {
+    font-size: 10px;
+    font-weight: 500;
+  }
+  .isiRobloxStudio {
+    overflow-x: none;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .isiRobloxStudio h1 {
+    font-size: 8vw;
+  }
+
+  .isiRobloxStudio a {
+    font-size: 5vw;
+  }
+  .isiCPP {
+    overflow-x: none;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .isiCPP h1 {
+    font-size: 8vw;
+  }
+
+  .isiCPP a {
+    font-size: 5vw;
+  }
+  .isiWebsite {
+    overflow-x: none;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .isiWebsite h1 {
+    font-size: 8vw;
+  }
+  .isiWebsite a {
+    font-size: 5vw;
+  }
+}
+
+@media (max-width: 670px) {
+  nav {
+    display: none;
+  }
+  .home {
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+  }
+  ul li {
+    display: none;
+  }
+  .ilham {
+    font-size: 25px;
+  }
+  .text {
+    font-size: 10px;
+    font-weight: 500;
+  }
+  .isiRobloxStudio {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .isiRobloxStudio h1 {
+    font-size: 6vw;
+  }
+
+  .isiRobloxStudio a {
+    font-size: 4vw;
+  }
+  .isiCPP {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .isiCPP h1 {
+    font-size: 6vw;
+  }
+
+  .isiCPP a {
+    font-size: 4vw;
+  }
+  .isiWebsite {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .isiWebsite h1 {
+    font-size: 6vw;
+  }
+
+  .isiWebsite a {
+    font-size: 4vw;
+  }
+}
+
+.Ilham {
+  animation: breathe 2.5s ease-in-out infinite;
+  color: blue;
+  font-size: 40px;
+  font-weight: bolder;
+}
+.text {
+  margin-left: 10px;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+}
+.h2 {
+  font-weight: 700;
+  font-size: 30px;
+}
+.home img {
+  max-width: 60vh;
+  max-height: 60vh;
+  width: 40vh;
+  height: 40vh;
+}
+
+@keyframes projectBlinking {
+  from {
+    font-weight: 600;
+    opacity: 20%;
+  }
+  to {
+    font-weight: 800;
+    opacity: 100%;
+  }
+}
+@keyframes cardbackBlinking {
+  from {
+    opacity: 30%;
+  }
+  to {
+    opacity: 100%;
+    color: blue;
+  }
+}
+
+.myProj {
+  width: 100%;
+  animation: projectBlinking 1.5s steps(2, start) infinite;
+  margin-top: 6cm;
+  font-size: 70px;
+  color: white;
+  font-weight: 800;
+  text-align: center;
+}
+
+.content-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 5.5cm;
+  margin-top: 8cm;
+  font-size: 25px;
+  flex-wrap: wrap;
+}
+
+.flipcard {
+  background-color: transparent;
+  width: 250px;
+  height: 350px;
+  perspective: 1000px;
+  margin: 20px;
+}
+
+.flipcard img {
+  margin-top: 30px;
+  width: 25%;
+  height: 25%;
+}
+
+.flipcardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flipcard:hover .flipcardInner {
+  transform: rotateY(180deg);
+}
+
+.flipcardFront,
+.flipcardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px; /* Rounded corners */
+}
+
+.flipcardFront {
+  background-color: grey;
+  color: white;
+  font-weight: 700;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.flipcardBack {
+  font-weight: 900;
+  background-color: grey;
+  color: white;
+  transform: rotateY(180deg);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.flipcardBack h2 {
+  color: white;
+  font-weight: 900;
+  animation: cardbackBlinking 1.5s steps(2, start) infinite;
+}
+
+.flipcardBack a {
+  font-size: 24px;
+  animation: breathecard 3.6s infinite ease-in-out;
+  color: white;
+  text-decoration: none;
+  margin-top: 10px;
+}
+.flipcardBack a:hover {
+  cursor: pointer;
+  animation: none;
+  opacity: 100%;
+  font-weight: 900;
+  color: blue;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+footer {
+  animation: projectBlinking 1.5s steps(2, start) infinite;
+  margin-top: 2cm;
+  color: white;
+  font-size: 27px;
+  font-weight: 800;
+  text-align: center;
+}
+
+@keyframes fadefromLeft {
+  from {
+    transform: translateX(-500px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+@keyframes fadefromRight {
+  from {
+    transform: translateX(500px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+@keyframes fadefromBottom {
+  from {
+    transform: translateY(500px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+.robloxStudio {
+  animation: fadefromLeft 1s linear;
+  animation-timeline: view();
+  animation-range: entry 0;
+}
+.CPP {
+  animation: fadefromBottom 1s linear;
+  animation-timeline: view();
+  animation-range: entry 0;
+}
+.Website {
+  animation: fadefromRight 1s linear;
+  animation-timeline: view();
+  animation-range: entry 0;
+}
+
+.isiRobloxStudio {
+  display: none;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: grey;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  width: 90%;
+  height: 100%;
+  text-align: center;
+}
+
+.isiRobloxStudio h1 {
+  color: white;
+  font-weight: 900;
+  font-size: 60px;
+  height: 20vh;
+}
+
+.isiRobloxStudio a {
+  color: white;
+  font-weight: 600;
+  font-size: 40px;
+  text-decoration: none;
+  height: 20vh;
+}
+.isiRobloxStudio a:hover {
+  color: white;
+  font-weight: 900;
+  font-size: 40px;
+  text-decoration: none;
+  height: 20vh;
+}
+
+.daftarProjRS {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.proj1RS,
+.proj2RS,
+.proj3RS {
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  height: 450px;
+  background-color: rgb(60, 60, 60);
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+
+.proj1RS:hover,
+.proj2RS:hover,
+.proj3RS:hover {
+  transform: scale(1.05);
+}
+
+.proj1RS img,
+.proj2RS img,
+.proj3RS img {
+  width: 80%;
+  height: auto;
+}
+
+.isiCPP {
+  display: none;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: grey;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  width: 90%;
+  height: 100%;
+  text-align: center;
+}
+
+.isiCPP h1 {
+  color: white;
+  font-weight: 900;
+  font-size: 60px;
+  height: 20vh;
+}
+
+.isiCPP a {
+  color: white;
+  font-weight: 600;
+  font-size: 40px;
+  text-decoration: none;
+  height: 20vh;
+}
+.isiCPP a:hover {
+  color: white;
+  font-weight: 900;
+  font-size: 40px;
+  text-decoration: none;
+  height: 20vh;
+}
+
+.daftarProjCPP {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.proj1CPP,
+.proj2CPP,
+.proj3CPP,
+.proj4CPP {
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  height: 450px;
+  background-color: rgb(60, 60, 60);
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+
+.proj1CPP:hover,
+.proj2CPP:hover,
+.proj3CPP:hover,
+.proj4CPP:hover  {
+  transform: scale(1.05);
+}
+
+.proj1CPP img,
+.proj2CPP img,
+.proj3CPP img,
+.proj4CPP img {
+  width: 80%;
+  height: auto;
+}
+.isiWebsite {
+  display: none;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: grey;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  width: 90%;
+  height: 100%;
+  text-align: center;
+}
+
+.isiWebsite h1 {
+  color: white;
+  font-weight: 900;
+  font-size: 60px;
+  height: 20vh;
+}
+
+.isiWebsite a {
+  color: white;
+  font-weight: 600;
+  font-size: 40px;
+  text-decoration: none;
+  height: 20vh;
+}
+.isiWebsite a:hover {
+  color: white;
+  font-weight: 900;
+  font-size: 40px;
+  text-decoration: none;
+  height: 20vh;
+}
+
+.daftarProjWebsite {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.proj1Web,
+.proj2Web,
+.proj3Web {
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  height: 450px;
+  background-color: rgb(60, 60, 60);
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+
+.proj1Web:hover,
+.proj2Web:hover,
+.proj3Web:hover {
+  transform: scale(1.05);
+}
+
+.proj1Web img,
+.proj2Web img,
+.proj3Web img {
+  width: 80%;
+  height: auto;
+}
+
+.Silang {
+  cursor: pointer;
+}
+
+@keyframes projHover {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 1.1;
+  }
+}
+
+.sosmed { 
+  height: 100%;
+  width: 100%;
+  margin-top: 5cm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3cm;
+}
+
+.IG:hover {
+  background-color: #696969;
+  border-radius: 20px;
+}
+.GITHUB:hover {
+  background-color: #696969;
+  border-radius: 20px;
+}
+.TIKTOK:hover {
+  background-color: #696969;
+  border-radius: 20px;
+}
+.Gmail:hover {
+  background-color: #696969;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.isiEmail {
+  display: none;
+  background-color: #696969;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.75);
+  justify-content: center;
+  align-items: center;
+  gap: 0.5cm;
+  flex-direction: column;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+}
+
+.emailAddress{
+  display: flex;
+  flex-direction: column;
+gap: 0.2cm;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.isiEmail svg{
+  justify-content: left;
+  align-items: start;
+}
+
+.isiEmail a:hover {
+  color: blue;
+}
+
+.closing {
+  margin-top: 2cm;
+  margin-left: 0.2cm;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 22px;
+  color: white;
+}
+
+.RS, .CPP, .Web {
+  animation: projectBlinking 1.2s steps(2, start) infinite;
+}
