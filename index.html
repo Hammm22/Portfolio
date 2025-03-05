@@ -4,13 +4,693 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <style>
+      body {
+  font-family: "Doto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(69, 69, 69);
+  background-size: 103%;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+}
+
+.home {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: white;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    opacity: 100%;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 30%;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes breathecard {
+  0%,
+  100% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 30%;
+  }
+}
+
+@media (max-width: 750px) {
+  nav {
+    position: relative;
+  }
+  .home {
+    margin-top: 4cm;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+  }
+
+  .ilham {
+    font-size: 25px;
+  }
+  .text {
+    font-size: 10px;
+    font-weight: 500;
+  }
+  .isiRobloxStudio {
+    overflow-x: none;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .isiRobloxStudio h1 {
+    font-size: 8vw;
+  }
+
+  .isiRobloxStudio a {
+    font-size: 5vw;
+  }
+  .isiCPP {
+    overflow-x: none;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .isiCPP h1 {
+    font-size: 8vw;
+  }
+
+  .isiCPP a {
+    font-size: 5vw;
+  }
+  .isiWebsite {
+    overflow-x: none;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .isiWebsite h1 {
+    font-size: 8vw;
+  }
+  .isiWebsite a {
+    font-size: 5vw;
+  }
+  .emailAddress{
+    font-size: 5px;
+  }
+}
+
+@media (max-width: 670px) {
+  nav {
+    display: none;
+  }
+  .home {
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+  }
+  ul li {
+    display: none;
+  }
+  .ilham {
+    font-size: 25px;
+  }
+  .text {
+    font-size: 10px;
+    font-weight: 500;
+  }
+  .isiRobloxStudio {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .isiRobloxStudio h1 {
+    font-size: 6vw;
+  }
+
+  .isiRobloxStudio a {
+    font-size: 4vw;
+  }
+  .isiCPP {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .isiCPP h1 {
+    font-size: 6vw;
+  }
+
+  .isiCPP a {
+    font-size: 4vw;
+  }
+  .isiWebsite {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .isiWebsite h1 {
+    font-size: 6vw;
+  }
+
+  .isiWebsite a {
+    font-size: 4vw;
+  }
+  .emailAddress{
+    font-size: 2px;
+  }
+}
+
+.Ilham {
+  animation: breathe 2.5s ease-in-out infinite;
+  color: blue;
+  font-size: 40px;
+  font-weight: bolder;
+}
+.text {
+  margin-left: 10px;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+}
+.h2 {
+  font-weight: 700;
+  font-size: 30px;
+}
+.home img {
+  max-width: 60vh;
+  max-height: 60vh;
+  width: 40vh;
+  height: 40vh;
+}
+
+@keyframes projectBlinking {
+  from {
+    font-weight: 600;
+    opacity: 20%;
+  }
+  to {
+    font-weight: 800;
+    opacity: 100%;
+  }
+}
+@keyframes cardbackBlinking {
+  from {
+    opacity: 30%;
+  }
+  to {
+    opacity: 100%;
+    color: blue;
+  }
+}
+
+.myProj {
+  width: 100%;
+  animation: projectBlinking 1.5s steps(2, start) infinite;
+  margin-top: 6cm;
+  font-size: 70px;
+  color: white;
+  font-weight: 800;
+  text-align: center;
+}
+
+.content-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 5.5cm;
+  margin-top: 8cm;
+  font-size: 25px;
+  flex-wrap: wrap;
+}
+
+.flipcard {
+  background-color: transparent;
+  width: 250px;
+  height: 350px;
+  perspective: 1000px;
+  margin: 20px;
+}
+
+.flipcard img {
+  margin-top: 30px;
+  width: 25%;
+  height: 25%;
+}
+
+.flipcardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flipcard:hover .flipcardInner {
+  transform: rotateY(180deg);
+}
+
+.flipcardFront,
+.flipcardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px; /* Rounded corners */
+}
+
+.flipcardFront {
+  background-color: grey;
+  color: white;
+  font-weight: 700;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.flipcardBack {
+  font-weight: 900;
+  background-color: grey;
+  color: white;
+  transform: rotateY(180deg);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.flipcardBack h2 {
+  color: white;
+  font-weight: 900;
+  animation: cardbackBlinking 1.5s steps(2, start) infinite;
+}
+
+.flipcardBack a {
+  font-size: 24px;
+  animation: breathecard 3.6s infinite ease-in-out;
+  color: white;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.flipcardBack img{
+  animation:breathecard 3.6s infinite ease-in-out;
+}
+
+.flipcardBack a:hover {
+  cursor: pointer;
+  animation: none;
+  opacity: 100%;
+  font-weight: 900;
+  color: blue;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+footer {
+  animation: projectBlinking 1.5s steps(2, start) infinite;
+  margin-top: 2cm;
+  color: white;
+  font-size: 27px;
+  font-weight: 800;
+  text-align: center;
+}
+
+@keyframes fadefromLeft {
+  from {
+    transform: translateX(-500px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+@keyframes fadefromRight {
+  from {
+    transform: translateX(500px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+@keyframes fadefromBottom {
+  from {
+    transform: translateY(500px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+.robloxStudio {
+  animation: fadefromLeft 1s linear;
+  animation-timeline: view();
+  animation-range: entry 0;
+}
+.CPP {
+  animation: fadefromBottom 1s linear;
+  animation-timeline: view();
+  animation-range: entry 0;
+}
+.Website {
+  animation: fadefromRight 1s linear;
+  animation-timeline: view();
+  animation-range: entry 0;
+}
+
+.isiRobloxStudio {
+  display: none;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: grey;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  width: 90%;
+  height: 100%;
+  text-align: center;
+}
+
+.isiRobloxStudio h1 {
+  color: white;
+  font-weight: 900;
+  font-size: 60px;
+  height: 20vh;
+}
+
+.isiRobloxStudio a {
+  color: white;
+  font-weight: 600;
+  font-size: 40px;
+  text-decoration: none;
+  height: 20vh;
+}
+.isiRobloxStudio a:hover {
+  color: white;
+  font-weight: 900;
+  font-size: 40px;
+  text-decoration: none;
+  height: 20vh;
+}
+
+.daftarProjRS {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.proj1RS,
+.proj2RS,
+.proj3RS {
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  height: 450px;
+  background-color: rgb(60, 60, 60);
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+
+.proj1RS:hover,
+.proj2RS:hover,
+.proj3RS:hover {
+  transform: scale(1.05);
+}
+
+.proj1RS img,
+.proj2RS img,
+.proj3RS img {
+  width: 80%;
+  height: auto;
+}
+
+.isiCPP {
+  display: none;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: grey;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  width: 90%;
+  height: 100%;
+  text-align: center;
+}
+
+.isiCPP h1 {
+  color: white;
+  font-weight: 900;
+  font-size: 60px;
+  height: 20vh;
+}
+
+.isiCPP a {
+  color: white;
+  font-weight: 600;
+  font-size: 40px;
+  text-decoration: none;
+  height: 20vh;
+}
+.isiCPP a:hover {
+  color: white;
+  font-weight: 900;
+  font-size: 40px;
+  text-decoration: none;
+  height: 20vh;
+}
+
+.daftarProjCPP {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.proj1CPP,
+.proj2CPP,
+.proj3CPP,
+.proj4CPP {
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  height: 450px;
+  background-color: rgb(60, 60, 60);
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+
+.proj1CPP:hover,
+.proj2CPP:hover,
+.proj3CPP:hover,
+.proj4CPP:hover  {
+  transform: scale(1.05);
+}
+
+.proj1CPP img,
+.proj2CPP img,
+.proj3CPP img,
+.proj4CPP img {
+  width: 80%;
+  height: auto;
+}
+.isiWebsite {
+  display: none;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: grey;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  width: 90%;
+  height: 100%;
+  text-align: center;
+}
+
+.isiWebsite h1 {
+  color: white;
+  font-weight: 900;
+  font-size: 60px;
+  height: 20vh;
+}
+
+.isiWebsite a {
+  color: white;
+  font-weight: 600;
+  font-size: 40px;
+  text-decoration: none;
+  height: 20vh;
+}
+.isiWebsite a:hover {
+  color: white;
+  font-weight: 900;
+  font-size: 40px;
+  text-decoration: none;
+  height: 20vh;
+}
+
+.daftarProjWebsite {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.proj1Web,
+.proj2Web,
+.proj3Web {
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  height: 450px;
+  background-color: rgb(60, 60, 60);
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+
+.proj1Web:hover,
+.proj2Web:hover,
+.proj3Web:hover {
+  transform: scale(1.05);
+}
+
+.proj1Web img,
+.proj2Web img,
+.proj3Web img {
+  width: 80%;
+  height: auto;
+}
+
+.Silang {
+  cursor: pointer;
+}
+
+@keyframes projHover {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 1.1;
+  }
+}
+
+.sosmed { 
+  height: 100%;
+  width: 100%;
+  margin-top: 5cm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3cm;
+}
+
+.IG:hover {
+  background-color: #696969;
+  border-radius: 20px;
+}
+.GITHUB:hover {
+  background-color: #696969;
+  border-radius: 20px;
+}
+.TIKTOK:hover {
+  background-color: #696969;
+  border-radius: 20px;
+}
+.Gmail:hover {
+  background-color: #696969;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.isiEmail {
+  display: none;
+  background-color: #696969;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.75);
+  justify-content: center;
+  align-items: center;
+  gap: 0.5cm;
+  flex-direction: column;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+}
+
+.emailAddress{
+  display: flex;
+  flex-direction: column;
+gap: 0.2cm;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.isiEmail svg{
+  justify-content: left;
+  align-items: start;
+}
+
+.isiEmail a:hover {
+  color: blue;
+}
+
+.closing {
+  margin-top: 2cm;
+  margin-left: 0.2cm;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 22px;
+  color: white;
+}
+
+.RS, .Web {
+  animation: projectBlinking 1.2s steps(2, start) infinite;
+}
+    </style>
   </head>
   <body>
     <div class="home">
@@ -34,13 +714,13 @@
         <div class="flipcard">
           <div class="flipcardInner">
             <div class="flipcardFront">
-              <img src="icons8-roblox-studio-48.png" />
+             <img src="icons8-roblox-studio-48.png" />
               <h2>Roblox Studio Project</h2>
               <p>So guys, this is my Roblox Studio Project</p>
             </div>
             <div class="flipcardBack">
               <img src="icons8-roblox-studio-48.png" />
-              <h2>Roblox Studio Project</h2>
+              <h2 class="backRS">Roblox Studio Project</h2>
               <a onclick="showRSContent()"
                 >Click to view my Roblox Studio Projects</a
               >
@@ -58,7 +738,7 @@
             </div>
             <div class="flipcardBack">
               <img src="icons8-c-48.png" />
-              <h2>C++ Project</h2>
+              <h2 class="backCPP">C++ Project</h2>
               <a onclick="showCPPContent()">Click to view my C++ Projects</a>
             </div>
           </div>
@@ -74,9 +754,58 @@
             </div>
             <div class="flipcardBack">
               <img src="icons8-website-48.png" />
-              <h2>Website Project</h2>
+              <h2 class="backWeb">Website Project</h2>
               <a onclick="showWebContent()"
                 >Click to view my Website Projects</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="Python">
+        <div class="flipcard">
+          <div class="flipcardInner">
+            <div class="flipcardFront">
+              <a>
+              <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" preserveAspectRatio="xMinYMin meet" viewBox="0 0 256 255" id="python">
+                <defs>
+                  <linearGradient id="a" x1="12.959%" x2="79.639%" y1="12.039%" y2="78.201%">
+                    <stop offset="0%" stop-color="#387EB8"></stop>
+                    <stop offset="100%" stop-color="#366994"></stop>
+                  </linearGradient>
+                  <linearGradient id="b" x1="19.128%" x2="90.742%" y1="20.579%" y2="88.429%">
+                    <stop offset="0%" stop-color="#FFE052"></stop>
+                    <stop offset="100%" stop-color="#FFC331"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill="url(#a)" d="M126.916.072c-64.832 0-60.784 28.115-60.784 28.115l.072 29.128h61.868v8.745H41.631S.145 61.355.145 126.77c0 65.417 36.21 63.097 36.21 63.097h21.61v-30.356s-1.165-36.21 35.632-36.21h61.362s34.475.557 34.475-33.319V33.97S194.67.072 126.916.072zM92.802 19.66a11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13 11.12 11.12 0 0 1-11.13-11.13 11.12 11.12 0 0 1 11.13-11.13z"></path>
+                <path fill="url(#b)" d="M128.757 254.126c64.832 0 60.784-28.115 60.784-28.115l-.072-29.127H127.6v-8.745h86.441s41.486 4.705 41.486-60.712c0-65.416-36.21-63.096-36.21-63.096h-21.61v30.355s1.165 36.21-35.632 36.21h-61.362s-34.475-.557-34.475 33.32v56.013s-5.235 33.897 62.518 33.897zm34.114-19.586a11.12 11.12 0 0 1-11.13-11.13 11.12 11.12 0 0 1 11.13-11.131 11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13z"></path>
+              </svg>
+            </a>
+              
+              <h2>Python Project</h2>
+              <p>So guys, this is Python Project</p>
+            </div>
+            <div class="flipcardBack">
+              <a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55" preserveAspectRatio="xMinYMin meet" viewBox="0 0 256 255" id="python">
+                  <defs>
+                    <linearGradient id="a" x1="12.959%" x2="79.639%" y1="12.039%" y2="78.201%">
+                      <stop offset="0%" stop-color="#387EB8"></stop>
+                      <stop offset="100%" stop-color="#366994"></stop>
+                    </linearGradient>
+                    <linearGradient id="b" x1="19.128%" x2="90.742%" y1="20.579%" y2="88.429%">
+                      <stop offset="0%" stop-color="#FFE052"></stop>
+                      <stop offset="100%" stop-color="#FFC331"></stop>
+                    </linearGradient>
+                  </defs>
+                  <path fill="url(#a)" d="M126.916.072c-64.832 0-60.784 28.115-60.784 28.115l.072 29.128h61.868v8.745H41.631S.145 61.355.145 126.77c0 65.417 36.21 63.097 36.21 63.097h21.61v-30.356s-1.165-36.21 35.632-36.21h61.362s34.475.557 34.475-33.319V33.97S194.67.072 126.916.072zM92.802 19.66a11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13 11.12 11.12 0 0 1-11.13-11.13 11.12 11.12 0 0 1 11.13-11.13z"></path>
+                  <path fill="url(#b)" d="M128.757 254.126c64.832 0 60.784-28.115 60.784-28.115l-.072-29.127H127.6v-8.745h86.441s41.486 4.705 41.486-60.712c0-65.416-36.21-63.096-36.21-63.096h-21.61v30.355s1.165 36.21-35.632 36.21h-61.362s-34.475-.557-34.475 33.32v56.013s-5.235 33.897 62.518 33.897zm34.114-19.586a11.12 11.12 0 0 1-11.13-11.13 11.12 11.12 0 0 1 11.13-11.131 11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13z"></path>
+                </svg>
+              </a>
+              <h2 class="backWeb">Python Project</h2>
+              <a onclick="showWebContent()"
+                >Click to view my Python Projects</a
               >
             </div>
           </div>
@@ -304,5 +1033,39 @@
     <div class="AboutMe"></div>
     <footer>2024, Hamm22 Projects CopyRight©</footer>
   </body>
-  <script src="script.js"></script>
+
+  <script>
+    function showRSContent() {
+      const RSContent = document.querySelector('.isiRobloxStudio');
+      RSContent.style.display = 'flex';
+  }
+  function hideRSContent() {
+      const RSContent = document.querySelector('.isiRobloxStudio');
+      RSContent.style.display = 'none';
+  }
+  function showCPPContent() {
+      const CPPContent = document.querySelector('.isiCPP');
+      CPPContent.style.display = 'flex';
+  }
+  function hideCPPContent() {
+      const CPPContent = document.querySelector('.isiCPP');
+      CPPContent.style.display = 'none';
+  }
+  function showWebContent() {
+      const CPPContent = document.querySelector('.isiWebsite');
+      CPPContent.style.display = 'flex';
+  }
+  function hideWebContent() {
+      const WebContent = document.querySelector('.isiWebsite');
+      WebContent.style.display = 'none';
+  }
+  function showEmailContent() {
+      const EmailContent = document.querySelector('.isiEmail');
+      EmailContent.style.display = 'flex';
+  }
+  function hideEmailContent() {
+      const EmailContent = document.querySelector('.isiEmail');
+      EmailContent.style.display = 'none';
+  }  
+  </script>
 </html>
