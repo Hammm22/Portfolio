@@ -1,6 +1,7 @@
 import Navbar from './components/navbar.jsx'
 import Hero from './components/hero.jsx'
 import About from './components/about.jsx'
+import School from './components/schoolJourney.jsx'
 import './index.css'
 
 function App() {
@@ -8,8 +9,8 @@ function App() {
     <div className="bg-stone-900">
       <Navbar />
         <Hero />
-
         <About />
+        <School />
       </div>
   )
 }

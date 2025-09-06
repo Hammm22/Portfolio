@@ -1,7 +1,7 @@
 
 function navbar(){
     return(
-        <nav className="bg-black/50 h-[80px] w-full flex items-center px-8 justify-between font-poppins fixed backdrop-blur-lg z-50 ">
+        <nav className="bg-black/50 h-24 w-full flex items-center px-8 justify-between font-poppins fixed backdrop-blur-lg z-50 ">
             <div>
                 <h1 className="text-white text-[30px]"><span className="text-sky-500">Hamm22</span> Portfolio</h1>
             </div>
